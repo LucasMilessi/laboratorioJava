@@ -1,0 +1,13 @@
+
+M
+java:S1481"2Remove this unused "diaDeLaSemana" local variable.(Üšöçúÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ğ­ò™ÿÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(àÍÓôúÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(îÓñéùÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(–İÙ‰ıÿÿÿÿ
+M	java:S106!"9Replace this use of System.out or System.err by a logger.(‘¥Œ
+S	java:S106$"9Replace this use of System.out or System.err by a logger.(÷–ÁÙıÿÿÿÿ
+N	java:S106'"9Replace this use of System.out or System.err by a logger.(©Ø•ø
+S	java:S106*"9Replace this use of System.out or System.err by a logger.(òÅùøÿÿÿÿ
+Z	java:S106-"9Replace this use of System.out or System.err by a logger.(¬¼Œ£ÿÿÿÿÿ8¡¥Ç­î/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñœ£øıÿÿÿÿ
