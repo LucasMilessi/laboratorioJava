@@ -1,7 +1,5 @@
 package persona;
 
-import groovyjarjarpicocli.CommandLine;
-
 import java.util.Scanner;
 
 public class EjecutableDePersona{

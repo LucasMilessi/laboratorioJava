@@ -1,0 +1,9 @@
+
+A
+java:S1659
+"&Declare "palabra2" on a separate line.(×£á†şÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ì‹êä
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Óó€¢
+U	java:S106"9Replace this use of System.out or System.err by a logger.(¹è¡¼8™˜‘Åî/
+T	java:S106"9Replace this use of System.out or System.err by a logger.(¦û…j8¦ÚÅî/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨µßÂøÿÿÿÿ

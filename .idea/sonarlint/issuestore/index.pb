@@ -19,3 +19,11 @@ d
 4src/eliminarEspaciosDeTxt/EliminarEspaciosDeTxt.java,4\e\4efc2b26696b36a5bba34e71d691642994f48280
 \
 ,src/longitudDeLaFrace/LongitudDeLaFrace.java,b\9\b9ed7fb4ae2dacf71ab9cfa6f3160156585c32fe
+b
+2src/consultaDeFechayHora/ConsultaDeFechayHora.java,8\b\8bc9cf66d19350e4ed9940bb8a0c84afd93714ad
+k
+;src/palabrasIgualesODistintas/PalabrasIgualesDistintas.java,f\4\f4d2ced04b9d0d206c4065d7a25a73c9bcac48a3
+X
+(src/numerosHastaMil/NumerosHastaMil.java,3\9\39c25104942d2440682d88699469e30013a51782
+\
+,src/gestionCinematica/GestionCinematica.java,6\0\60eab092b0251f1fa8e9f58c088c9fff2971be9d
