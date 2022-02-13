@@ -1,7 +1,7 @@
 package electrodomestico;
 
 public class Electrodomestico {
-    private final int precioBase;
+    private final double precioBase;
     private final String color;
     private final char consumoDeEnergia;
     private final int peso;
@@ -41,8 +41,8 @@ public class Electrodomestico {
             return "BLANCO";
     }
 
-    public int precioFinal(){
-        int precio = 0;
+    public double precioFinal(){
+        double precio = 0;
 
         while(consumoDeEnergia == 'A'){
             if (peso >= 0 && peso <= 19){
@@ -137,7 +137,7 @@ public class Electrodomestico {
         return 0;
     }
 
-    public int getPrecioBase() {
+    public double getPrecioBase() {
         return precioBase;
     }
 

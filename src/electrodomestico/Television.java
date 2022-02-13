@@ -21,17 +21,17 @@ public class Television extends Electrodomestico{
         this.resolucion = resolucion;
         this.sintonizadorTDT = sintonizadorTDT;
     }
-    public int precioFinal(int resolucion, boolean sintonizadorTDT){
-        int precio = 0;
+    public double precioFinal(){
+        double precio = super.precioFinal();
 
         if(resolucion > 40){
-            precio = (int) (precioFinal() * 1.30);
+            precio = (precio * 1.30);
             return precio;
         }else if((resolucion > 40) && (sintonizadorTDT == true)){
-            precio = (int) ((precioFinal() * 1.30) + 50);
+            precio = ((precio * 1.30) + 50);
             return precio;
         }
-        return precioFinal();
+        return precio;
 
     }
 

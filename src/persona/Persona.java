@@ -3,12 +3,17 @@ package persona;
 import java.util.Random;
 
 public class Persona {
-    String nombre;
-    int edad;
-    String dni;
-    char sexo;
-    int peso;
-    double altura;
+    private String nombre;
+    private int edad;
+    private String dni;
+    private char sexo;
+    private int peso;
+    private double altura;
+    final int pesoIdeal = 0;
+    final int sobrePeso = 1;
+    final int pesoInferior = -1;
+    private final static char secoDefinido = 'H';
+
 
     Persona() {
     }
@@ -17,63 +22,57 @@ public class Persona {
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
+        comprobarSexo();
     }
 
     Persona(String nombre, int edad, String dni, char sexo, int peso, double altura) {
         this.nombre = nombre;
         this.edad = edad;
-        this.dni = dni;
+        generarDNI();
         this.sexo = sexo;
+        comprobarSexo();
         this.peso = peso;
         this.altura = altura;
     }
 
-    public int calcularIMC(Persona persona) {
-        peso = persona.getPeso();
-        altura = persona.getAltura();
-        double imc = peso/(altura*altura);
+    public int calcularIMC() {
+        double pesoActual = peso / (Math.pow(altura, 2));
 
-        if (imc < 20) {
-            System.out.println("Estas por debajo del peso ideal");
-            return -1;
-        } else if (imc >= 20 && imc <= 25) {
-            System.out.println("Estas en el peso ideal");
-            return 0;
-        }else if(imc > 25){
-            System.out.println("Tienes sobrepeso");
-            return 1;
+        if (pesoActual >= 20 && pesoActual <= 25) {
+            return pesoIdeal;
+        } else if (pesoActual < 20) {
+            return pesoInferior;
+        } else {
+            return sobrePeso;
         }
-    return 2;
     }
 
-    public boolean esMayorDeEdad(Persona persona){
-        edad = persona.getEdad();
+    public boolean esMayorDeEdad(){
 
         if(edad >= 18){
-            System.out.println("Es mayor de edad");
             return true;
         }else{
-            System.out.println("No es mayor de edad");
             return false;
         }
     }
 
-    public char comprobarSexo(Persona persona){
-        sexo = persona.getSexo();
+    public void comprobarSexo(){
 
-        if(sexo == 'm' || sexo == 'M'){
-            System.out.println("Es una mujer");
-            return 'M';
-        }else if(sexo == 'h' || sexo == 'H'){
-            System.out.println("Es un hombre");
-            return 'H';
+        if (sexo != 'H' && sexo != 'M') {
+            this.sexo = secoDefinido;
         }
-        return 'H';
     }
 
-    public String toString(){
-        System.out.println(getNombre()+" , "+getEdad()+" , "+getSexo()+" , "+getPeso()+" , "+getAltura()+" , "+getDni());
-        return null;
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", edad=" + edad +
+                ", dni='" + dni + '\'' +
+                ", sexo=" + sexo +
+                ", peso=" + peso +
+                ", altura=" + altura +
+                '}';
     }
 
     public static String generarDNI(){

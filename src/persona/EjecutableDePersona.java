@@ -1,5 +1,6 @@
 package persona;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class EjecutableDePersona{
@@ -16,7 +17,7 @@ public class EjecutableDePersona{
         int edad = datoIngresado.nextInt();
 
         System.out.println("Ingrese su sexo (M o H): ");
-        char sexo = datoIngresado.next().charAt(0);
+        char sexo = datoIngresado.next().toUpperCase(Locale.ROOT).charAt(0);
 
         System.out.println("Ingrese su peso corporal: ");
         int peso = datoIngresado.nextInt();
@@ -26,24 +27,56 @@ public class EjecutableDePersona{
 
         System.out.println("\n");
 
-        Persona persona1 = new Persona(nombre, edad,Persona.generarDNI(), sexo, peso, altura);
+        Persona persona1 = new Persona();
         Persona persona2 = new Persona(nombre,edad,sexo);
-        Persona persona3 = new Persona();
+        Persona persona3 = new Persona(nombre, edad,Persona.generarDNI(), sexo, peso, altura);
 
-        persona3.setNombre("Matias");
-        persona3.setEdad(25);
-        persona3.setSexo('H');
-        persona3.setPeso(74);
-        persona3.setAltura(1.75);
 
-        persona1.toString();
-        System.out.println(persona.calcularIMC(persona1) + ", " + persona.comprobarSexo(persona1) + ", " + persona.esMayorDeEdad(persona1)+"\n\n");
 
-        persona2.toString();
-        System.out.println(persona.calcularIMC(persona2) + ", " + persona.comprobarSexo(persona2) + ", " + persona.esMayorDeEdad(persona2)+"\n\n");
+        persona1.setNombre("Matias");
+        persona1.setEdad(25);
+        persona1.setSexo('H');
+        persona1.setPeso(74);
+        persona1.setAltura(1.75);
 
-        System.out.println(persona3.nombre+" , "+persona3.edad+" , "+persona3.sexo+" , "+persona3.peso+" , "+persona3.altura+" , "+Persona.generarDNI());
-        System.out.println(persona.calcularIMC(persona3) + ", " + persona.comprobarSexo(persona3) + ", " + persona.esMayorDeEdad(persona3)+"\n\n");
+        persona2.setPeso(110);
+        persona2.setAltura(1.80);
 
+
+        System.out.println(persona1.toString());
+        mostrarMensajeDePeso(persona1);
+        mostrarMayorDeEdad(persona1);
+        System.out.println("\n\n");
+
+        System.out.println(persona2.toString());
+        mostrarMensajeDePeso(persona2);
+        mostrarMayorDeEdad(persona2);
+        System.out.println("\n\n");
+
+        System.out.println(persona3.toString());
+        mostrarMensajeDePeso(persona3);
+        mostrarMayorDeEdad(persona3);
+    }
+
+    public static void mostrarMensajeDePeso(Persona persona){
+        Persona persona1 = new Persona();
+        int IMC = persona.calcularIMC();
+
+        if(IMC == persona1.pesoIdeal){
+            System.out.println("La persona esta en su peso ideal");
+        }else if(IMC == persona1.pesoInferior){
+            System.out.println("La persona esta por debajo de su peso ideal");
+        }else if(IMC == persona1.sobrePeso){
+            System.out.println("La persona esta por encima de su peso ideal");
+        }
+    }
+
+    public static void mostrarMayorDeEdad(Persona p) {
+
+        if (p.esMayorDeEdad()) {
+            System.out.println("La persona es mayor de edad");
+        } else {
+            System.out.println("La persona no es mayor de edad");
+        }
     }
 }
